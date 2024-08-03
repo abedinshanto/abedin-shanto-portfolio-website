@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="cursor.css">
     <script src="https://kit.fontawesome.com/d916611b0c.js" crossorigin="anonymous"></script>   
 </head>
 <body>
@@ -423,5 +424,31 @@
       </section>
      <!-- footer section ends here -->
 
+
+
+
+
+     <!-- custom cursor -->
+      <div class="cursor-dot" data-cursor-dot></div>
+      <div class="cursor-outline" data-cursor-outline></div>
+
+      <script>
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
+    window.addEventListener('mousemove', function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // animated version
+        cursorOutline.animate([
+            { left: `${posX}px`, top: `${posY}px` }
+        ], 
+            { duration: 500, fill: 'forwards' }
+        );
+    });
+
+      </script>
 </body>
 </html>

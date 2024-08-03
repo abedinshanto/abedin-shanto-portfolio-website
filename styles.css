@@ -359,3 +359,26 @@ hr {
 .elfsight-app-f4386b4a-45a5-4632-b19e-a75e117492f7 {
   display: none !important;
 }
+body{
+  cursor: none;
+}
+.cursor-dot{
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+}
+.cursor-outline{
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--primary-color);
+}
+.cursor-dot, .cursor-outline{
+  position: fixed;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+}
