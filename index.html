@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abedin's Portfolio</title>
 
+    <!-- whatsapp button 1 -->
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-f4386b4a-45a5-4632-b19e-a75e117492f7" data-elfsight-app-lazy></div>
+
+    <!-- makes the branding go away -->
+    <script>
+        (function() {
+            function removeWatermark() {
+                var watermarks = document.querySelectorAll('a[href*="elfsight.com/whatsapp-chat-widget"]');
+                watermarks.forEach(function(watermark) {
+                    watermark.style.display = 'none';
+                    watermark.style.visibility = 'hidden';
+                    watermark.style.opacity = '0';
+                    watermark.style.pointerEvents = 'none';
+                    watermark.style.height = '0';
+                    watermark.style.width = '0';
+                    watermark.style.overflow = 'hidden';
+                });
+            }
+        
+            // Run immediately
+            removeWatermark();
+        
+            // Also run periodically to catch any dynamically added elements
+            setInterval(removeWatermark, 1000);
+        
+            // Use MutationObserver for more efficient detection
+            var observer = new MutationObserver(removeWatermark);
+            observer.observe(document.body, { childList: true, subtree: true });
+        })();
+    </script>
+
     <!-- stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="root.css">
